@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adhishrihaan Foundation</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--dg:#203b1b;--g:#315b23;--lg:#eef1eb;--cream:#faf8f2;--txt:#333;}
+html{scroll-behavior:smooth}
+body{font-family:'Montserrat',sans-serif;font-size:13px;color:var(--txt);overflow-x:hidden;background:#fff}
+h1,h2,h3,h4,h5{font-weight:700;color:var(--dg)}
+img{max-width:100%}
+
+/* NAVBAR */
+.site-nav{position:absolute;top:0;left:0;right:0;z-index:20;display:flex;justify-content:center;padding:0 12px}
+.site-nav .navbar{background:var(--dg);border-radius:0 0 18px 18px;padding:8px 26px;width:100%;max-width:1080px}
+.navbar-brand{color:#fff!important;font-weight:700;font-size:16px;letter-spacing:.3px}
+.navbar .nav-link{color:rgba(255,255,255,.85);font-size:10px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;padding:6px 10px!important;transition:color .2s}
+.navbar .nav-link:hover,.navbar .nav-link.active{color:#fff;text-decoration:underline;text-underline-offset:5px}
+.navbar-toggler{border-color:rgba(255,255,255,.5)}
+.navbar-toggler-icon{filter:invert(1)}
+
+/* HERO */
+.hero{position:relative;height:290px;background:linear-gradient(#0003,#0006),url('https://loremflickr.com/1920/600/person,dog?lock=11') center/cover no-repeat,#5b6b4d;display:flex;align-items:flex-end;justify-content:center;padding-bottom:26px}
+.hero .btn{font-size:10px;font-weight:600;letter-spacing:.8px;color:#fff;border:1px solid #fff;background:rgba(255,255,255,.12);padding:5px 18px;backdrop-filter:blur(2px);transition:all .25s}
+.hero .btn:hover{background:#fff;color:var(--dg)}
+
+/* MISSION */
+.mission{background:var(--dg);color:#fff;text-align:center;padding:38px 12px 30px}
+.mission h2{color:#fff;font-size:20px;line-height:1.4;max-width:760px;margin:0 auto 12px;font-weight:600}
+.mission p{max-width:640px;margin:0 auto 18px;font-size:11.5px;line-height:1.7;color:rgba(255,255,255,.85)}
+.mission .links a{color:#fff;font-size:10px;font-weight:600;letter-spacing:.8px;text-decoration:none}
+.mission .links a:hover{text-decoration:underline}
+.mission .links .sep{display:inline-block;width:1px;height:12px;background:#fff;opacity:.6;margin:0 14px;vertical-align:middle}
+
+/* SECTION HEADINGS */
+.sec-head{text-align:center;margin-bottom:34px}
+.sec-head h2{font-size:22px;letter-spacing:.5px;margin-bottom:4px;text-transform:uppercase}
+.sec-head .sub{font-size:10.5px;font-weight:600;letter-spacing:1.5px;color:var(--g);text-transform:uppercase}
+
+/* WHAT WE DO */
+.what{padding:56px 0 50px;background:#fff}
+.pillar{max-width:860px;margin:0 auto;padding:18px 0;border-bottom:1px solid #e6e9e2}
+.pillar:last-child{border-bottom:0}
+.pillar h3{font-size:13px;letter-spacing:.8px;text-transform:uppercase;margin:0}
+.pillar p{margin:0;font-size:12px;line-height:1.75}
+.pillar strong{color:var(--g)}
+
+/* FOCUS */
+.focus{position:relative;background:var(--cream);padding:52px 0 60px;overflow:hidden}
+.focus::before,.focus::after{content:"";position:absolute;border:1.5px solid rgba(49,91,35,.10);border-radius:50%;pointer-events:none}
+.focus::before{width:900px;height:420px;left:-300px;top:-160px}
+.focus::after{width:1000px;height:460px;right:-380px;bottom:-200px}
+.focus .container{position:relative;z-index:1}
+.focus-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:170px 170px;gap:12px;max-width:960px;margin:0 auto}
+.focus-card{position:relative;overflow:hidden;border-radius:12px;background:var(--g);box-shadow:0 2px 8px rgba(0,0,0,.08);transition:box-shadow .3s}
+.focus-card:hover{box-shadow:0 8px 20px rgba(0,0,0,.18)}
+.focus-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.focus-card:hover img{transform:scale(1.08)}
+.card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,.05) 65%)}
+.focus-card span{position:absolute;left:12px;right:12px;bottom:10px;color:#fff;font-weight:600;font-size:12px;line-height:1.3}
+.fc-women{grid-column:1/2;grid-row:1/3}
+
+/* GRANT */
+.grant{padding:70px 0;background:#fff}
+.grant h2{font-size:24px;margin-bottom:14px}
+.grant p{font-size:12px;line-height:1.8;max-width:430px}
+.grant .lead-p{font-weight:600;color:var(--dg)}
+.btn-green{background:var(--dg);color:#fff;border-radius:50px;font-size:11px;font-weight:600;padding:8px 24px;border:0;transition:all .25s}
+.btn-green:hover{background:var(--g);color:#fff;transform:translateY(-1px);box-shadow:0 4px 10px rgba(0,0,0,.2)}
+.grant-img{width:100%;height:320px;object-fit:cover;border-radius:14px;background:var(--g)}
+
+/* EVENTS */
+.events{background:var(--lg);padding:54px 0 60px}
+.events .nav-tabs{border:0;justify-content:center;gap:8px;margin-bottom:26px}
+.events .nav-link{border:1px solid var(--g);border-radius:50px;color:var(--g);font-size:11px;font-weight:600;padding:5px 20px}
+.events .nav-link.active{background:var(--dg);border-color:var(--dg);color:#fff}
+.event-card{background:#fff;border-radius:14px;overflow:hidden;max-width:880px;margin:0 auto;box-shadow:0 3px 14px rgba(0,0,0,.07)}
+.event-card img{width:100%;height:100%;min-height:230px;object-fit:cover;background:var(--g)}
+.event-body{padding:24px 26px}
+.event-body h3{font-size:16px;line-height:1.4;margin-bottom:8px}
+.event-meta{font-size:11px;color:#666;margin-bottom:10px}
+.badge-g{background:var(--lg);color:var(--g);font-weight:600;font-size:10px;border-radius:50px;padding:5px 11px}
+.event-body p{font-size:12px;line-height:1.7;margin:12px 0 16px}
+.events .carousel-indicators{position:static;margin:20px 0 0}
+.events .carousel-indicators [data-bs-target]{width:8px;height:8px;border-radius:50%;background:var(--g);border:0;opacity:.35;margin:0 4px}
+.events .carousel-indicators .active{opacity:1;width:22px;border-radius:8px}
+
+/* FOOTER */
+footer{background:linear-gradient(135deg,#0f1a0d,#203b1b);color:#fff;border-radius:26px 26px 0 0;padding:40px 0 18px}
+footer h4{color:#fff;font-size:15px}
+footer .label{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.6);margin:12px 0 0}
+footer a{color:#fff;text-decoration:none}
+.social a{display:inline-flex;width:34px;height:34px;border:1px solid rgba(255,255,255,.5);border-radius:50%;align-items:center;justify-content:center;margin:0 4px;transition:all .25s}
+.social a:hover{background:#fff;color:var(--dg)}
+.btn-donate{background:#fff;color:var(--dg);font-weight:700;font-size:11px;letter-spacing:.8px;border-radius:50px;padding:8px 24px;transition:all .25s}
+.btn-donate:hover{background:var(--cream);transform:translateY(-1px)}
+.foot-line{border-top:1px solid rgba(255,255,255,.2);margin-top:28px;padding-top:16px;font-size:10.5px;color:rgba(255,255,255,.75)}
+.foot-line a:hover{text-decoration:underline}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}
+.reveal.show{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+/* RESPONSIVE */
+@media (max-width:991.98px){
+ .site-nav .navbar{border-radius:0 0 14px 14px;padding:8px 16px}
+ .navbar .nav-link{padding:9px 4px!important;font-size:11px}
+ .focus-grid{grid-template-columns:repeat(3,1fr)}
+ .fc-women{grid-column:1/2}
+}
+@media (max-width:767.98px){
+ .hero{height:220px;padding-bottom:18px}
+ .mission h2{font-size:16px}
+ .what{padding:40px 0}
+ .pillar h3{margin-bottom:6px}
+ .focus-grid{grid-template-columns:repeat(2,1fr);grid-template-rows:none;grid-auto-rows:140px}
+ .fc-women{grid-column:1/3;grid-row:auto}
+ .grant{padding:44px 0}
+ .grant-img{height:240px}
+ .event-body{padding:18px}
+ footer{text-align:center}
+ .foot-line{text-align:center}
+}
+</style>
+</head>
+<body>
+
+<header class="position-relative">
+ <div class="site-nav">
+  <nav class="navbar navbar-expand-lg" aria-label="Main navigation">
+   <div class="container-fluid px-0">
+    <a class="navbar-brand" href="#home">Adhishrihaan</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+     <ul class="navbar-nav align-items-lg-center">
+      <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="#what">About</a></li>
+      <li class="nav-item"><a class="nav-link" href="#grant">The Shrihaan Sahyog Grant</a></li>
+      <li class="nav-item"><a class="nav-link" href="#focus">Initiatives</a></li>
+      <li class="nav-item"><a class="nav-link" href="#mission">Our Impact</a></li>
+      <li class="nav-item"><a class="nav-link" href="#events">Events</a></li>
+      <li class="nav-item"><a class="nav-link" href="#events">News &amp; Media</a></li>
+      <li class="nav-item"><a class="nav-link" href="#footer">Get Involved</a></li>
+     </ul>
+    </div>
+   </div>
+  </nav>
+ </div>
+ <div class="hero" id="home" role="img" aria-label="A volunteer caring for an animal">
+  <div class="d-flex justify-content-center gap-2 flex-wrap">
+   <a href="#mission" class="btn rounded-pill">KNOW MORE</a>
+   <a href="#footer" class="btn rounded-pill">VOLUNTEER</a>
+   <a href="#footer" class="btn rounded-pill">DONATE</a>
+  </div>
+ </div>
+</header>
+
+<main>
+ <section class="mission" id="mission">
+  <div class="container reveal">
+   <h1 class="h2">Empowering Those Who Empower Others: Investing in Grassroots, Investing in India's Future.</h1>
+   <p>Adhishrihaan Foundation stands beside grassroots organizations and community leaders who work with compassion and commitment, helping them grow their reach, tell their stories and create lasting change where it matters most.</p>
+   <div class="links"><a href="#focus">DISCOVER OUR IMPACT</a><span class="sep"></span><a href="#footer">SUPPORT OUR MISSION</a></div>
+  </div>
+ </section>
+
+ <section class="what" id="what">
+  <div class="container">
+   <div class="sec-head reveal"><h2>What We Do</h2><div class="sub">Our Pillars of Support</div></div>
+   <div class="pillar row reveal">
+    <div class="col-md-3"><h3>Capacity Building</h3></div>
+    <div class="col-md-9"><p><strong>Care in Action:</strong> We offer tailored training programs, essential funding assistance, and critical technological support to enhance the operational efficiency and program effectiveness of our partner NGOs. This includes workshops on project management, financial literacy, fundraising strategies, and digital tools.</p></div>
+   </div>
+   <div class="pillar row reveal">
+    <div class="col-md-3"><h3>Visibility</h3></div>
+    <div class="col-md-9"><p><strong>Care in Action:</strong> We are dedicated to amplifying the impactful stories of these silent warriors. We help them effectively communicate their achievements, document their journeys, and gain recognition through diverse channels.</p></div>
+   </div>
+   <div class="pillar row reveal">
+    <div class="col-md-3"><h3>Networking</h3></div>
+    <div class="col-md-9"><p><strong>Care in Action:</strong> We connect grassroots NGOs with each other, fostering collaborative learning and shared solutions. We also link them with larger philanthropic organizations, corporate CSR initiatives, academic institutions, and government bodies.</p></div>
+   </div>
+  </div>
+ </section>
+
+ <section class="focus" id="focus">
+  <div class="container">
+   <div class="sec-head reveal"><h2>Our Focus Areas</h2><div class="sub">Touching Lives with Compassion</div></div>
+   <div class="focus-grid reveal">
+    <div class="focus-card fc-women"><img src="https://loremflickr.com/600/700/women,children?lock=21" alt="Women and Child Welfare" loading="lazy"><div class="card-overlay"></div><span>Women and Child Welfare</span></div>
+    <div class="focus-card"><img src="https://loremflickr.com/500/400/students,classroom?lock=22" alt="Education" loading="lazy"><div class="card-overlay"></div><span>Education</span></div>
+    <div class="focus-card"><img src="https://loremflickr.com/500/400/doctor,clinic?lock=23" alt="Healthcare" loading="lazy"><div class="card-overlay"></div><span>Healthcare</span></div>
+    <div class="focus-card"><img src="https://loremflickr.com/500/400/vocational,training?lock=24" alt="Skill Development" loading="lazy"><div class="card-overlay"></div><span>Skill Development</span></div>
+    <div class="focus-card"><img src="https://loremflickr.com/500/400/dogs,puppy?lock=25" alt="Animal Welfare" loading="lazy"><div class="card-overlay"></div><span>Animal Welfare</span></div>
+    <div class="focus-card"><img src="https://loremflickr.com/500/400/elderly,grandmother?lock=26" alt="Elderly Care" loading="lazy"><div class="card-overlay"></div><span>Elderly Care</span></div>
+    <div class="focus-card"><img src="https://loremflickr.com/500/400/forest,planting?lock=27" alt="Environment" loading="lazy"><div class="card-overlay"></div><span>Environment</span></div>
+   </div>
+  </div>
+ </section>
+
+ <section class="grant" id="grant">
+  <div class="container">
+   <div class="row align-items-center g-4 g-lg-5">
+    <div class="col-lg-6 reveal">
+     <h2>The Shrihaan Sahyog Grant</h2>
+     <p class="lead-p">As a testament to our unwavering commitment to direct and impactful social initiatives, the Shrihaan Sahyog Grant provides crucial support to grassroots organizations.</p>
+     <p>The grant offers funding and guidance to small, community-rooted NGOs so they can strengthen programs, reach more people and build a foundation for long-term impact.</p>
+     <a href="#" class="btn btn-green mt-2">Know More</a>
+    </div>
+    <div class="col-lg-6 reveal">
+     <img class="grant-img" src="https://loremflickr.com/900/700/planting,tree,hands?lock=31" alt="A person planting a young tree" loading="lazy">
+    </div>
+   </div>
+  </div>
+ </section>
+
+ <section class="events" id="events">
+  <div class="container">
+   <div class="sec-head reveal"><h2 style="text-transform:none">Our Events</h2><div class="sub" style="text-transform:none;letter-spacing:.5px">What's Next &amp; What's Been</div></div>
+   <ul class="nav nav-tabs reveal" id="eventTabs" role="tablist">
+    <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#past" type="button" role="tab" aria-selected="true">Past Events</button></li>
+    <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#upcoming" type="button" role="tab" aria-selected="false">Upcoming Events</button></li>
+   </ul>
+   <div class="tab-content">
+    <div class="tab-pane fade show active" id="past" role="tabpanel">
+     <div id="pastCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
+      <div class="carousel-inner">
+       <div class="carousel-item active">
+        <article class="event-card"><div class="row g-0">
+         <div class="col-md-5"><img src="https://loremflickr.com/700/500/animal,shelter,people?lock=41" alt="Community gathering at the cat shelter foundation stone ceremony" loading="lazy"></div>
+         <div class="col-md-7 event-body">
+          <h3>Guardians of All Voiceless — Cat Shelter Foundation Stone</h3>
+          <div class="event-meta d-flex gap-3"><span><i class="bi bi-calendar3 me-1"></i>01-07-2025</span><span><i class="bi bi-geo-alt me-1"></i>Patiala</span></div>
+          <div class="d-flex gap-2 flex-wrap"><span class="badge badge-g">Past Events</span><span class="badge badge-g">Animal Welfare</span></div>
+          <p>In India, millions of street animals face challenges like lack of shelter, medical care, and compassion.</p>
+          <a href="#" class="btn btn-green">Read More</a>
+         </div></div></article>
+       </div>
+       <div class="carousel-item">
+        <article class="event-card"><div class="row g-0">
+         <div class="col-md-5"><img src="https://loremflickr.com/700/500/community,volunteers?lock=42" alt="Volunteers at a community outreach event" loading="lazy"></div>
+         <div class="col-md-7 event-body">
+          <h3>Community Outreach Drive for Grassroots Partners</h3>
+          <div class="event-meta d-flex gap-3"><span><i class="bi bi-calendar3 me-1"></i>15-05-2025</span><span><i class="bi bi-geo-alt me-1"></i>Chandigarh</span></div>
+          <div class="d-flex gap-2 flex-wrap"><span class="badge badge-g">Past Events</span><span class="badge badge-g">Capacity Building</span></div>
+          <p>A day of workshops and conversations connecting grassroots NGOs with mentors and supporters.</p>
+          <a href="#" class="btn btn-green">Read More</a>
+         </div></div></article>
+       </div>
+      </div>
+      <div class="carousel-indicators">
+       <button type="button" data-bs-target="#pastCarousel" data-bs-slide-to="0" class="active" aria-label="Event 1"></button>
+       <button type="button" data-bs-target="#pastCarousel" data-bs-slide-to="1" aria-label="Event 2"></button>
+      </div>
+     </div>
+    </div>
+    <div class="tab-pane fade" id="upcoming" role="tabpanel">
+     <article class="event-card"><div class="row g-0">
+      <div class="col-md-5"><img src="https://loremflickr.com/700/500/workshop,training?lock=43" alt="Upcoming workshop for partner NGOs" loading="lazy"></div>
+      <div class="col-md-7 event-body">
+       <h3>Digital Skills Workshop for Partner NGOs</h3>
+       <div class="event-meta d-flex gap-3"><span><i class="bi bi-calendar3 me-1"></i>To be announced</span><span><i class="bi bi-geo-alt me-1"></i>Patiala</span></div>
+       <div class="d-flex gap-2 flex-wrap"><span class="badge badge-g">Upcoming Events</span><span class="badge badge-g">Capacity Building</span></div>
+       <p>Hands-on sessions on fundraising, storytelling and digital tools for grassroots teams.</p>
+       <a href="#" class="btn btn-green">Read More</a>
+      </div></div></article>
+    </div>
+   </div>
+  </div>
+ </section>
+</main>
+
+<footer id="footer">
+ <div class="container">
+  <div class="row gy-4 align-items-center text-center text-md-start">
+   <div class="col-md-4">
+    <h4>Adhishrihaan</h4>
+    <p class="label">Email</p><a href="mailto:info@adhishrihaan.com">info@adhishrihaan.com</a>
+    <p class="label">Phone</p><a href="tel:+910000000000">+91 00000 00000</a>
+   </div>
+   <div class="col-md-4 text-center">
+    <p class="label mb-2">Follow Us</p>
+    <div class="social">
+     <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+     <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+     <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+     <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+    </div>
+   </div>
+   <div class="col-md-4 text-md-end">
+    <p class="fw-semibold mb-3">Changing Lives, Building Futures.</p>
+    <a href="#" class="btn btn-donate">DONATE NOW</a>
+   </div>
+  </div>
+  <div class="foot-line d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+   <span>© 2025 Adhishrihaan | All rights reserved</span>
+   <span><a href="#home">Home</a> | <a href="#what">About Us</a> | <a href="#focus">Initiatives</a> | <a href="#mission">Our Impact</a> | <a href="#footer">Contact Us</a></span>
+  </div>
+ </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+// Smooth scroll + close mobile menu
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var id=a.getAttribute('href');
+    if(id.length>1&&document.querySelector(id)){
+      e.preventDefault();
+      document.querySelector(id).scrollIntoView({behavior:'smooth'});
+      var nav=document.getElementById('mainNav');
+      if(nav.classList.contains('show')){bootstrap.Collapse.getOrCreateInstance(nav).hide();}
+    }
+  });
+});
+// Scroll reveal
+var io=new IntersectionObserver(function(entries){
+  entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('show');io.unobserve(en.target);}});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>
